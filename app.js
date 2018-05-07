@@ -1,7 +1,3 @@
-//Upd
-//const http = require('http');
-//const fs = require('fs');
-
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -23,7 +19,7 @@ mongoose.connection.on('error', (err) => {
 });
 
 const app = express();
-const users = require('C:/projects/routes/users');
+const users = require('./routes/users');
 
 //Port Number
 const port = 3000;
@@ -50,29 +46,3 @@ app.get('/', (req, res) => {
 app.listen(port, () =>{
 	console.log('Server started on port ' +port);
 });
-
-//module.exports = router;
-
-//const hostname = '127.0.0.1';
-//const port = 3000;
-/*
-fs.readFile('index.html', (err, html) =>{
-	if(err){
-		throw err;
-	}
-
-	const server = http.createServer((req,res) =>{
-		res.statusCode = 200;
-		res.setHeader('Content-type', 'text/html');
-		res.write(html);
-		res.end();
-		//res.end('Hello World!');
-	});
-
-	server.listen(port, hostname, () => {
-		console.log('Server started on port ' + port);
-	});
-
-
-});
-*/
